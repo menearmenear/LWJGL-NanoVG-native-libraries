@@ -23,11 +23,17 @@ missing platform natives on the game classpath. No mixins, no code, no changes t
 
 ## Install
 
-Drop `lwjgl-nanovg-natives-1.0.0.jar` into the mods folder. That's it.
+Drop the jar matching your Minecraft version into the mods folder. That's it.
+
+| Minecraft | LWJGL | Jar |
+|-----------|-------|-----|
+| 26.1.2+   | 3.4.1 | `lwjgl-nanovg-natives-1.0.0.jar` (repo root) |
+| 1.21.11   | 3.3.3 | `fabric-1.21.11/lwjgl-nanovg-natives-1.0.0-1.21.11.jar` |
 
 ## How it works / layout
 
-The natives are packaged under the exact resource paths LWJGL 3.4.x's loader searches:
+The natives are packaged under the exact resource paths LWJGL's loader searches
+(3.4.1 for MC 26.1.2+, 3.3.3 for MC 1.21.11):
 
 ```
 linux/arm64/org/lwjgl/nanovg/liblwjgl_nanovg.so
@@ -37,8 +43,8 @@ META-INF/linux/{arm64,arm32}/org/lwjgl/nanovg/liblwjgl_nanovg.so.sha1
 META-INF/windows/arm64/org/lwjgl/nanovg/lwjgl_nanovg.dll.sha1
 ```
 
-Sources: `org.lwjgl:lwjgl-nanovg:3.4.1` natives jars from Maven Central
-(https://repo1.maven.org/maven2/org/lwjgl/lwjgl-nanovg/3.4.1/), BSD-3-Clause license.
+Sources: `org.lwjgl:lwjgl-nanovg:3.4.1` (MC 26.1.2+) and `3.3.3` (MC 1.21.11) natives jars
+from Maven Central (https://repo1.maven.org/maven2/org/lwjgl/lwjgl-nanovg/), BSD-3-Clause license.
 
 ## Requirements
 
