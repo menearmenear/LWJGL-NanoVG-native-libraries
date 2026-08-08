@@ -14,9 +14,13 @@
 
 Fabric library mod for **Minecraft 26.1.2** that ships the **LWJGL NanoVG native
 libraries** (LWJGL **3.4.1**) for platforms that are not bundled with the game or with
-other mods: `linux-arm64`, `linux-arm32`, `windows-arm64`.
+other mods: Android `linux-arm64`, `linux-arm32` (Bionic builds) and `windows-arm64`.
 
 Any mod that uses `org.lwjgl:lwjgl-nanovg` (e.g. custom NanoVG-rendered GUIs) can use this.
+
+> Note: desktop Linux arm64 natives from Maven Central are built against **glibc**
+> (`libm.so.6`) and will fail to `dlopen` on Android. This mod ships the **Bionic**
+> builds used by the Pojav/Mojo Android launchers, so they load on Android devices.
 
 ## Why this exists
 
@@ -35,7 +39,7 @@ missing platform natives on the game classpath. No mixins, no code, no changes t
 
 ## Install
 
-Drop `lwjgl-nanovg-natives-1.0.1.jar` from the latest
+Drop `lwjgl-nanovg-natives-1.0.2.jar` from the latest
 [release](https://github.com/menearmenear/LWJGL-NanoVG-native-libraries/releases) into the
 mods folder. That's it.
 
@@ -51,8 +55,11 @@ META-INF/linux/{arm64,arm32}/org/lwjgl/nanovg/liblwjgl_nanovg.so.sha1
 META-INF/windows/arm64/org/lwjgl/nanovg/lwjgl_nanovg.dll.sha1
 ```
 
-Sources: `org.lwjgl:lwjgl-nanovg:3.4.1` natives jars from Maven Central
-(https://repo1.maven.org/maven2/org/lwjgl/lwjgl-nanovg/3.4.1/), BSD-3-Clause license.
+Sources: `org.lwjgl:lwjgl-nanovg:3.4.1` natives from
+[Maven Central](https://repo1.maven.org/maven2/org/lwjgl/lwjgl-nanovg/3.4.1/) (windows-arm64)
+and the Android (Bionic) builds from the
+[MojoLauncher/unilwjgl3-builder](https://github.com/MojoLauncher/unilwjgl3-builder/releases/tag/v3.4.1-5)
+release (linux-arm64, linux-arm32), BSD-3-Clause license.
 
 ## Requirements
 
@@ -74,5 +81,6 @@ gradle buildJars     # produces both the mod jar and the sources jar
 
 | Release | Game | LWJGL | Natives |
 | ------- | ---- | ----- | ------- |
+| [v1.0.2](https://github.com/menearmenear/LWJGL-NanoVG-native-libraries/releases/tag/v1.0.2) | 26.1.2 | 3.4.1 | Android arm64/arm32 (Bionic), windows-arm64 |
 | [v1.0.1](https://github.com/menearmenear/LWJGL-NanoVG-native-libraries/releases/tag/v1.0.1) | 26.1.2 | 3.4.1 | linux-arm64, linux-arm32, windows-arm64 |
 | [v1.0.0](https://github.com/menearmenear/LWJGL-NanoVG-native-libraries/releases/tag/v1.0.0) | 1.21.11 | 3.3.3 | linux-arm64, linux-arm32, windows-arm64 |
