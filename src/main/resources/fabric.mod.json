@@ -5,6 +5,7 @@
   "name": "LWJGL NanoVG native libraries",
   "description": "Ships the LWJGL NanoVG native libraries (LWJGL 3.3.3) for ARM64/ARM32 and Windows ARM64 devices so any mod using lwjgl-nanovg can load on mobile launchers and ARM hardware.",
   "authors": ["menear"],
+  "icon": "assets/lwjgl-nanovg-natives/icon.png",
   "environment": "client",
   "depends": {
     "fabricloader": ">=0.15.0",
