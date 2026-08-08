@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "id": "lwjgl-nanovg-natives",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "name": "LWJGL NanoVG native libraries",
-  "description": "Ships the LWJGL NanoVG native libraries (LWJGL 3.4.1) for ARM64/ARM32 and Windows ARM64 devices so any mod using lwjgl-nanovg can load on mobile launchers and ARM hardware.",
+  "description": "Ships the LWJGL NanoVG native libraries (LWJGL 3.3.3) for ARM64/ARM32 and Windows ARM64 devices so any mod using lwjgl-nanovg can load on mobile launchers and ARM hardware.",
   "authors": ["menear"],
   "icon": "assets/lwjgl-nanovg-natives/icon.png",
   "environment": "client",
   "depends": {
     "fabricloader": ">=0.15.0",
-    "minecraft": "~26.1.2"
+    "minecraft": "~1.21.11"
   }
 }
