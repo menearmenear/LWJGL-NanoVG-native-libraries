@@ -61,6 +61,10 @@ and the Android (Bionic) builds from the
 [MojoLauncher/unilwjgl3-builder](https://github.com/MojoLauncher/unilwjgl3-builder/releases/tag/v3.4.1-5)
 release (linux-arm64, linux-arm32), BSD-3-Clause license.
 
+For future Minecraft/LWJGL updates, pull the matching natives from the
+[MojoLauncher/unilwjgl3-builder releases](https://github.com/MojoLauncher/unilwjgl3-builder/releases)
+(e.g. `lwjgl-nanovg-natives-linux-arm64-<version>.jar` for the game's LWJGL version).
+
 ## Requirements
 
 - The game must already have a desktop-ish OpenGL environment (this mod only fixes native
