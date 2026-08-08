@@ -18,3 +18,15 @@ java {
 jar {
     from('src/main/resources')
 }
+
+tasks.register('sourcesJar', Jar) {
+    archiveClassifier = 'sources'
+    from('src/main/resources')
+    from(rootDir) {
+        include 'build.gradle', 'settings.gradle', 'README.md', '.gitignore'
+    }
+}
+
+tasks.register('buildJars') {
+    dependsOn tasks.named('jar'), tasks.named('sourcesJar')
+}
