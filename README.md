@@ -1,7 +1,19 @@
 # LWJGL NanoVG native libraries
 
-Fabric library mod for **Minecraft 1.21.11** that ships the **LWJGL NanoVG native
-libraries** (LWJGL **3.3.3**) for platforms that are not bundled with the game or with
+![Minecraft](https://img.shields.io/badge/Minecraft-26.1.2-00af9c)
+![Mod loader](https://img.shields.io/badge/Mod%20Loader-Fabric-1976d2)
+![LWJGL](https://img.shields.io/badge/LWJGL-3.4.1-333333)
+![Platforms](https://img.shields.io/badge/Platforms-Android%20ARM64%20%7C%20ARM32%20%7C%20Windows%20ARM64-4caf50)
+
+![Release](https://img.shields.io/github/v/release/menearmenear/LWJGL-NanoVG-native-libraries)
+![Downloads (latest release)](https://img.shields.io/github/downloads/menearmenear/LWJGL-NanoVG-native-libraries/latest/total?label=downloads%20%28latest%29)
+![Downloads (total)](https://img.shields.io/github/downloads/menearmenear/LWJGL-NanoVG-native-libraries/total)
+![Release date](https://img.shields.io/github/release-date/menearmenear/LWJGL-NanoVG-native-libraries?label=release%20date)
+![Last commit](https://img.shields.io/github/last-commit/menearmenear/LWJGL-NanoVG-native-libraries)
+![License](https://img.shields.io/badge/license-BSD--3--Clause-959da5)
+
+Fabric library mod for **Minecraft 26.1.2** that ships the **LWJGL NanoVG native
+libraries** (LWJGL **3.4.1**) for platforms that are not bundled with the game or with
 other mods: `linux-arm64`, `linux-arm32`, `windows-arm64`.
 
 Any mod that uses `org.lwjgl:lwjgl-nanovg` (e.g. custom NanoVG-rendered GUIs) can use this.
@@ -23,13 +35,13 @@ missing platform natives on the game classpath. No mixins, no code, no changes t
 
 ## Install
 
-Drop `lwjgl-nanovg-natives-1.0.0.jar` from the latest
+Drop `lwjgl-nanovg-natives-1.0.1.jar` from the latest
 [release](https://github.com/menearmenear/LWJGL-NanoVG-native-libraries/releases) into the
 mods folder. That's it.
 
 ## How it works / layout
 
-The natives are packaged under the exact resource paths LWJGL 3.3.3's loader searches:
+The natives are packaged under the exact resource paths LWJGL 3.4.1's loader searches:
 
 ```
 linux/arm64/org/lwjgl/nanovg/liblwjgl_nanovg.so
@@ -39,8 +51,8 @@ META-INF/linux/{arm64,arm32}/org/lwjgl/nanovg/liblwjgl_nanovg.so.sha1
 META-INF/windows/arm64/org/lwjgl/nanovg/lwjgl_nanovg.dll.sha1
 ```
 
-Sources: `org.lwjgl:lwjgl-nanovg:3.3.3` natives jars from Maven Central
-(https://repo1.maven.org/maven2/org/lwjgl/lwjgl-nanovg/3.3.3/), BSD-3-Clause license.
+Sources: `org.lwjgl:lwjgl-nanovg:3.4.1` natives jars from Maven Central
+(https://repo1.maven.org/maven2/org/lwjgl/lwjgl-nanovg/3.4.1/), BSD-3-Clause license.
 
 ## Requirements
 
@@ -55,6 +67,12 @@ Sources: `org.lwjgl:lwjgl-nanovg:3.3.3` natives jars from Maven Central
 No Java code, so no Loom needed:
 
 ```
-gradle build        # produces the mod jar
-gradle sourcesJar   # produces the sources jar
+gradle buildJars     # produces both the mod jar and the sources jar
 ```
+
+## Previous versions
+
+| Release | Game | LWJGL | Natives |
+| ------- | ---- | ----- | ------- |
+| [v1.0.1](https://github.com/menearmenear/LWJGL-NanoVG-native-libraries/releases/tag/v1.0.1) | 26.1.2 | 3.4.1 | linux-arm64, linux-arm32, windows-arm64 |
+| [v1.0.0](https://github.com/menearmenear/LWJGL-NanoVG-native-libraries/releases/tag/v1.0.0) | 1.21.11 | 3.3.3 | linux-arm64, linux-arm32, windows-arm64 |
